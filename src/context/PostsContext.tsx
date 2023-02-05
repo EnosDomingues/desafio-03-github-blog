@@ -5,6 +5,7 @@ interface Post {
   title: string,
   body: string,
   created_at: string,
+  html_url: string,
   id: number
 }
 

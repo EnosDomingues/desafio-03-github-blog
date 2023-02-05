@@ -1,23 +1,22 @@
-import { BodyContent } from "./components/BodyContent";
-import { BodyWrapper } from "./components/BodyContent/styles";
-import { Header } from "./components/Header";
-import { PostList } from "./components/PostList";
-import { SearchForm } from "./components/SearchForm";
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
 import { PostContextProvider } from "./context/PostsContext";
 import { UsersContextProvider } from "./context/UsersContext";
+import { Router } from "./Router";
+import { GlobalStyle } from "./styles/global";
+import { defaultTheme } from "./styles/themes/default";
 
 export function App() {
   return (
-    <UsersContextProvider>
-      <PostContextProvider>
-      <Header />
-      <BodyWrapper>
-        <BodyContent>
-         <SearchForm />
-         <PostList />
-        </BodyContent>
-      </BodyWrapper>
-      </PostContextProvider>
-    </UsersContextProvider>
+    <ThemeProvider theme={defaultTheme}>
+      <BrowserRouter>
+      <UsersContextProvider>
+        <PostContextProvider>
+          <Router />
+        </PostContextProvider>
+      </UsersContextProvider>
+      </BrowserRouter>
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }

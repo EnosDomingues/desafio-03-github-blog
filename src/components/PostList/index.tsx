@@ -10,7 +10,13 @@ export function PostList() {
     <PostListContainer>
       {posts.map((post) => {
         return (
-          <Post key={post.id} body={post.body} title={post.title} created_at={post.created_at}/>
+          <Post 
+            key={post.id} 
+            body={post.body} 
+            title={post.title} 
+            created_at={post.created_at}
+            id={post.id}
+          />
         )
       })}
     </PostListContainer>

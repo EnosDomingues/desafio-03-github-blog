@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PostContainer = styled.div`
+export const PostContainer = styled.a`
   background-color: ${props => props.theme["base-post"]};
   border: 2px solid transparent;
   width: 26rem;

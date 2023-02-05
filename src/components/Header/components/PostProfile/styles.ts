@@ -1,59 +1,55 @@
 import styled from "styled-components";
 
-export const ProfileContainer = styled.div`
+export const PostProfileContainer = styled.div`
   /* width: min(80%, 54rem); */
   min-width: 54rem;
-  height: 13.25rem;
+  height: 10.5rem;
   padding: 2rem 2.5rem;
   background-color: ${props => props.theme["base-profile"]};
   z-index: 1;
   transform: translateY(28%);
   display: flex;
+  flex-direction: column;
   border-radius: 10px;
   box-shadow: 0 2px 28px ${props => props.theme["base-profile"]};
 `
 
-export const ProfilePicture = styled.img`
+export const PostProfilePicture = styled.img`
   width: 9.25rem;
   height: 9.25rem;
   border-radius: 8px;
   margin-right: 2rem;
 `
 
-export const ProfileContent = styled.div`
+export const PostProfileContent = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
   position: relative;
 `
 
-export const ProfileContentHeader = styled.header`
+export const PostProfileContentHeader = styled.header`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 1rem;
 
-  h1 {
-    color: ${props => props.theme["base-title"]};
-    font-size: ${props => props.theme.fontSize["2xl"]};
-    font-weight: bold;
-  }
-
-  div {
-    display: flex;
-    align-items: center;
-  }
-
-  div span {
+  span {
     color: ${props => props.theme.blue};
     font-weight: bold;
     font-size: ${props => props.theme.fontSize.xs};
     margin-right: 0.5rem;
   }
 
-  div a {
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: transparent;
     padding: 0.25rem 0;
     border: 0;
-    line-height: 0;
+    line-height: 1;
     cursor: pointer;
     border-bottom: 1px solid transparent;
     text-decoration: 0;
@@ -69,19 +65,21 @@ export const ProfileContentHeader = styled.header`
   }
 `
 
-export const ProfileContentBody = styled.div`
+export const PostProfileContentBody = styled.div`
   width: 100%;
-  margin-top: 0.5rem;
-  max-height: 18.5rem;
+  padding: 0.5rem 0;
+
+  h1 {
+    margin-top: 0.5rem;
+    color: ${props => props.theme["base-title"]};
+    font-size: ${props => props.theme.fontSize["2xl"]};
+    font-weight: bold;
+  }
 `
 
-export const ProfileContentFooter = styled.footer`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  gap: 1.5rem;
-  position: absolute;
-  bottom: 1px;
+export const PostProfileContentFooter = styled.footer`
+  display: flex;
+  gap: 2rem;
 `
 
 export const FooterInfo = styled.div`
@@ -93,6 +91,6 @@ export const FooterInfo = styled.div`
   }
 
   span {
-    color: ${props => props.theme["base-subtitle"]};
+    color: ${props => props.theme["base-span"]};
   }
 `
